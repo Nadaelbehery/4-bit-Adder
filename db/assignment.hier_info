@@ -1,0 +1,99 @@
+|assignment
+bigCin => fourbitadder:stage0.bigCin
+x[0] => fourbitadder:stage0.x[0]
+x[1] => fourbitadder:stage0.x[1]
+x[2] => fourbitadder:stage0.x[2]
+x[3] => fourbitadder:stage0.x[3]
+y[0] => fourbitadder:stage0.y[0]
+y[1] => fourbitadder:stage0.y[1]
+y[2] => fourbitadder:stage0.y[2]
+y[3] => fourbitadder:stage0.y[3]
+led1[6] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led1[5] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led1[4] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led1[3] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led1[2] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led1[1] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led1[0] <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led2[6] <= led2.DB_MAX_OUTPUT_PORT_TYPE
+led2[5] <= <VCC>
+led2[4] <= led2.DB_MAX_OUTPUT_PORT_TYPE
+led2[3] <= led2.DB_MAX_OUTPUT_PORT_TYPE
+led2[2] <= led2.DB_MAX_OUTPUT_PORT_TYPE
+led2[1] <= led2.DB_MAX_OUTPUT_PORT_TYPE
+led2[0] <= led2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|assignment|fourbitadder:stage0
+bigCin => fulladder:stage0.Cin
+x[0] => fulladder:stage0.x
+x[1] => fulladder:stage1.x
+x[2] => fulladder:stage2.x
+x[3] => fulladder:stage3.x
+y[0] => fulladder:stage0.y
+y[1] => fulladder:stage1.y
+y[2] => fulladder:stage2.y
+y[3] => fulladder:stage3.y
+s[0] <= fulladder:stage0.s
+s[1] <= fulladder:stage1.s
+s[2] <= fulladder:stage2.s
+s[3] <= fulladder:stage3.s
+bigCout <= fulladder:stage3.Cout
+
+
+|assignment|fourbitadder:stage0|fulladder:stage0
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|assignment|fourbitadder:stage0|fulladder:stage1
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|assignment|fourbitadder:stage0|fulladder:stage2
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|assignment|fourbitadder:stage0|fulladder:stage3
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
